@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 export default function ContactList({ list }) {
   return (
-    <Modal>
+    <Modal background="bg-gray-50">
       <main className="w-full flex flex-col gap-4 overflow-hidden bg-gray-50">
         <h2 className="p-2 text-3xl font-medium text-center">let's get in touch</h2>
         <div className="p-3 grid grid-cols-2 gap-4">

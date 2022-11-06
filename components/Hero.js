@@ -27,7 +27,7 @@ export default function Album() {
         </p>
         <div className="flex flex-row justify-center gap-4">
           <button className="px-3 py-1 font-medium rounded-md border-2 border-white bg-white text-black">who i am</button>
-          <button onClick={() => dispatch(openModal())} className="px-3 py-1 font-medium rounded-md border-2 text-white border-white transition-all duration-300 ease-in-out hover:border-white hover:bg-white hover:text-black">contact me</button>
+          <button onClick={() => dispatch(openModal())} className="px-3 py-1 font-medium rounded-md border-2 text-white border-white animate-frequency hover:animate-none transition-all duration-300 ease-in-out hover:border-white hover:bg-white hover:text-black">contact me</button>
         </div>
       </div>
       <video

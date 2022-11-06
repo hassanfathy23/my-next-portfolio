@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Cta from "../components/Cta";
+// import Cta from "../components/Cta";
 import Features from "../components/Features";
 import Stack from "../components/Stack";
 import Header from "../components/Header";
 import ContactList from '../components/ContactList'
+import Layout from "../components/Layout";
 
-const contactList = [
+export const contactList = [
   {
     id: "300",
     url: "mailto:hassanfathy593@gmail.com",
@@ -72,6 +73,7 @@ const frontStack = [
     name: "react",
     description:
       "the best javascript library for building the front end of one page websites",
+      important: true
   },
   {
     id: "104",
@@ -79,6 +81,7 @@ const frontStack = [
     name: "nextjs",
     description:
       "the react library for production with its advantages in file based system routing and various data fetching methods that helps with SEO",
+      important: true
   },
   {
     id: "105",
@@ -100,6 +103,7 @@ const frontStack = [
     name: "typescript",
     description:
       "strongly typed programing language that builds on javascript to add type safety to your code",
+      important: true
   },
 ];
 
@@ -144,6 +148,7 @@ const backStack = [
     name: "typescript",
     description:
       "strongly typed programing language that builds on javascript to add type safety to your code",
+      important: true
   },
   {
     id: "10",
@@ -151,6 +156,7 @@ const backStack = [
     name: "graphql",
     description:
       "a query language for APIs and a runtime that allows you to send queries from and to backend and manipulate it",
+      important: true
   },
   {
     id: "11",
@@ -216,7 +222,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
+      <Layout>
       <Hero />
       {modalIsOpen && <ContactList list={contactList} />}
       <Features />
@@ -224,7 +230,7 @@ export default function Home() {
       <Stack header="stack for front end" stack={frontStack} id="front-stack" />
       <Stack header="stack for back end" stack={backStack} id="back-stack" />
       <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
-      <Cta />
+      </ Layout>
     </div>
   );
 }
