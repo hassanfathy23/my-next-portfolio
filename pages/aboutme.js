@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Image from "next/image";
@@ -61,15 +63,34 @@ const myWorks = [
   },
 ];
 
+const pricingDetails = "charging money as a freelancer varies, some clients prefer to \
+pay per project, and others prefer to pay per hour, so as a base rule, me as a freelancer \
+i charge what is equal to 10 dollars per hour (10$/h), and that's because multiple reasons \
+first of all is i'm a junior developer, i worked on few projects and i need experience more \
+than i need money in the time being, secondly, i live in egypt which is relatively much more cheaper \
+than lots of countries in the world, dispite all that, the price i charge will increase \
+in the next few months."
+
+const requirementDetails = "all i need from you to start working is a design with all the content/media like \
+images, videos, ...etc and i will start work on your project instantly"
+
 export default function AboutMe() {
   return (
+    <>
+    <Head>
+      <title>this is about title</title>
+      <meta name="description" content="this is description" key="desc" /> 
+      <meta property="og:title" content="this is title" /> 
+      <meta property="og:description" content="this is description" /> 
+      <meta property="og:image" content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg" /> 
+    </Head>
     <Layout>
-      <main className="w-10/12 flex flex-col gap-4 items-center bg-gray-50 rounded-2xl">
+      <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center bg-gray-50 rounded-2xl">
         <Header content="who am i?" />
-        <div className="w-10/12 px-8 py-4 flex flex-col gap-20">
+        <div className="w-full lg:w-10/12 px-4 sm:px-8 py-4 flex flex-col gap-20">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-medium">personal information</h2>
-            <p className="text-gray-600 text-lg">{personalInfo}</p>
+            <p className="text-gray-600 text-lg lowercase">{personalInfo}</p>
           </div>
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-medium">experience</h2>
@@ -78,18 +99,18 @@ export default function AboutMe() {
             </p>
             <div className="flex flex-col gap-2">
               {myWorks.map((item) => (
-                <Link href={item.link}>
+                <Link href={item.link} key={item.id}>
                   <div
-                    key={item.id}
-                    className="px-4 py-2 flex flex-row-reverse gap-2 rounded-xl shadow-md shadow-black/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-black/5"
+                    className="md:px-4 md:py-2 flex flex-col md:flex-row-reverse items-center gap-2 rounded-xl shadow-md shadow-black/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-black/5"
                   >
+                    <div className="px-4 md:px-0 flex justify-center items-center">
                     <Image
                       src={item.image}
                       alt="can't display this image"
-                      objectFit="cover"
                       width={250}
                       height={200}
                     />
+                    </div>
                     <div className="p-2 flex flex-col gap-2">
                       <div className="py-2 flex flex-row gap-2">
                         <h3 className="text-xl font-medium">{item.title}</h3>
@@ -97,15 +118,28 @@ export default function AboutMe() {
                           from {item.from} to {item.to}
                         </i>
                       </div>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-600 lowercase">{item.description}</p>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
           </div>
+          <div>
+            <h2 className="text-2xl font-medium">pricing</h2>
+            <p className="text-gray-600 text-lg lowercase">{pricingDetails}</p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-medium">requirement</h2>
+            <p className="text-gray-600 text-lg lowercase">{requirementDetails}</p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-medium">contact info</h2>
+            <p className="text-gray-600 text-lg lowercase">email: hassanfathy593@gmail.com <br /> phone: +201091284365</p>
+          </div>
         </div>
       </main>
     </Layout>
+    </>
   );
 }

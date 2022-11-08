@@ -22,7 +22,8 @@ module.exports = {
       },
       animation: {
         frequency: 'frequency 1s ease-in-out infinite',
-        fadeIn: 'fadeIn 0.3s ease-in-out',
+        fadeIn: 'fadeIn .3s ease-in-out',
+        fadeInSlowely: 'fadeIn 1s ease-in-out',
         zoomIn: 'zoomIn 0.3s ease-in-out'
       },
       

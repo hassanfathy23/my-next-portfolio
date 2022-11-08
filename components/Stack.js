@@ -1,17 +1,17 @@
 import { Icon } from "@iconify/react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import {AnimationOnScroll} from "react-animation-on-scroll";
 
 export default function Stack({ stack, header, id }) {
   return (
     <div
       id={id}
-      className="w-10/12 py-6 px-3 mx-auto my-3 flex flex-col justify-center gap-2 animate-zoomIn rounded-md"
+      className="w-full sm:w-10/12 py-6 sm:px-3 mx-auto my-3 flex flex-col justify-center gap-2 animate-zoomIn rounded-md"
     >
       <h2 className="text-center text-xl font-medium capitalize text-black ">
         {header}
       </h2>
       <AnimationOnScroll animateIn="animate-zoomIn" animateOnce={true}>
-        <div className="w-full grid grid-cols-3 gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {stack.map((element) => (
             <div
               key={element.id}

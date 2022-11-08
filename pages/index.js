@@ -1,4 +1,5 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Head from "next/head";
 
 // import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -219,9 +220,17 @@ const miscStack = [
 
 export default function Home() {
   const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
+  const dispatch = useDispatch()
 
   return (
-    <div>
+    <>
+    <Head>
+      <title>this is title</title>
+      <meta name="description" content="this is description" key="desc" /> 
+      <meta property="og:title" content="this is title" /> 
+      <meta property="og:description" content="this is description" /> 
+      <meta property="og:image" content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg" /> 
+    </Head>
       <Layout>
       <Hero />
       {modalIsOpen && <ContactList list={contactList} />}
@@ -231,6 +240,6 @@ export default function Home() {
       <Stack header="stack for back end" stack={backStack} id="back-stack" />
       <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
       </ Layout>
-    </div>
+      </>
   );
 }
