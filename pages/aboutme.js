@@ -78,10 +78,10 @@ export default function AboutMe() {
   return (
     <>
     <Head>
-      <title>this is about title</title>
-      <meta name="description" content="this is description" key="desc" /> 
-      <meta property="og:title" content="this is title" /> 
-      <meta property="og:description" content="this is description" /> 
+      <title>who am i?</title>
+      <meta name="description" content={personalInfo + " " + experienceHeader + " " + pricingDetails + " " + requirementDetails} key="desc" /> 
+      <meta property="og:title" content="who am i?" /> 
+      <meta property="og:description" content={personalInfo + " " + experienceHeader + " " + pricingDetails + " " + requirementDetails} /> 
       <meta property="og:image" content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg" /> 
     </Head>
     <Layout>

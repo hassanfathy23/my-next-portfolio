@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { useDispatch } from "react-redux"
 
 import { openModal } from "../store/uiSlice"
@@ -21,12 +22,12 @@ export default function Example() {
               </span>
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">
-              <a
-                href="#"
+              <Link
+                href="/aboutme"
                 className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-black hover:bg-indigo-50"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
         </div>

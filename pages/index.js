@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Stack from "../components/Stack";
 import Header from "../components/Header";
-import ContactList from '../components/ContactList'
+import ContactList from "../components/ContactList";
 import Layout from "../components/Layout";
 
 export const contactList = [
@@ -74,7 +74,7 @@ const frontStack = [
     name: "react",
     description:
       "the best javascript library for building the front end of one page websites",
-      important: true
+    important: true,
   },
   {
     id: "104",
@@ -82,7 +82,7 @@ const frontStack = [
     name: "nextjs",
     description:
       "the react library for production with its advantages in file based system routing and various data fetching methods that helps with SEO",
-      important: true
+    important: true,
   },
   {
     id: "105",
@@ -104,7 +104,7 @@ const frontStack = [
     name: "typescript",
     description:
       "strongly typed programing language that builds on javascript to add type safety to your code",
-      important: true
+    important: true,
   },
 ];
 
@@ -132,7 +132,7 @@ const backStack = [
   },
   {
     id: "4",
-    url: "",
+    url: "game-icons:goose",
     name: "mongoose",
     description: "node based object data modeling library for mongodb",
   },
@@ -149,7 +149,7 @@ const backStack = [
     name: "typescript",
     description:
       "strongly typed programing language that builds on javascript to add type safety to your code",
-      important: true
+    important: true,
   },
   {
     id: "10",
@@ -157,7 +157,7 @@ const backStack = [
     name: "graphql",
     description:
       "a query language for APIs and a runtime that allows you to send queries from and to backend and manipulate it",
-      important: true
+    important: true,
   },
   {
     id: "11",
@@ -220,26 +220,53 @@ const miscStack = [
 
 export default function Home() {
   const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <>
-    <Head>
-      <title>this is title</title>
-      <meta name="description" content="this is description" key="desc" /> 
-      <meta property="og:title" content="this is title" /> 
-      <meta property="og:description" content="this is description" /> 
-      <meta property="og:image" content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg" /> 
-    </Head>
+      <Head>
+        <title>hassan fathy, full stack web developer</title>
+        <meta
+          name="description"
+          content="web developer for hire, hire someone to \
+          build your website who is expert in developing font \
+          end, back end, full stack web applications with \
+          experience of 1 year in software and software \
+          archticture, i will develop your website using \
+          html, css, javascript, react, next, redux, tailwind, \
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, \
+          typescript, npm, jsonwebtoken, git, github, cypress, \
+          heroku, railway, vercel"
+          key="desc"
+        />
+        <meta property="og:title" content="hassan fathy, full stack web developer" />
+        <meta property="og:description" content="web developer for hire, hire someone to \
+          build your website who is expert in developing font \
+          end, back end, full stack web applications with \
+          experience of 1 year in software and software \
+          archticture, i will develop your website using \
+          html, css, javascript, react, next, redux, tailwind, \
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, \
+          typescript, npm, jsonwebtoken, git, github, cypress, \
+          heroku, railway, vercel" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg"
+        />
+      </Head>
       <Layout>
-      <Hero />
-      {modalIsOpen && <ContactList list={contactList} />}
-      <Features />
-      <Header content="tech stack" />
-      <Stack header="stack for front end" stack={frontStack} id="front-stack" />
-      <Stack header="stack for back end" stack={backStack} id="back-stack" />
-      <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
-      </ Layout>
-      </>
+        <Hero />
+        {modalIsOpen && <ContactList list={contactList} />}
+        <Features />
+        <Header content="tech stack" />
+        <Stack
+          header="stack for front end"
+          stack={frontStack}
+          id="front-stack"
+        />
+        <Stack header="stack for back end" stack={backStack} id="back-stack" />
+        <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
+      </Layout>
+    </>
   );
 }

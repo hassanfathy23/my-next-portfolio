@@ -115,7 +115,7 @@ export default function Navbar() {
         <div></div>
           <div
             onClick={() => dispatch(openDropdownMenu())}
-            className="md:hidden"
+            className="md:hidden cursor-pointer"
           >
             <Icon
               icon="ant-design:menu-outlined"

@@ -5,7 +5,7 @@ export default function Stack({ stack, header, id }) {
   return (
     <div
       id={id}
-      className="w-full sm:w-10/12 py-6 sm:px-3 mx-auto my-3 flex flex-col justify-center gap-2 animate-zoomIn rounded-md"
+      className="w-full sm:w-10/12 py-6 px-4 mx-auto my-3 flex flex-col justify-center gap-2 animate-zoomIn rounded-md"
     >
       <h2 className="text-center text-xl font-medium capitalize text-black ">
         {header}

@@ -19,7 +19,7 @@ export default function Album() {
         <h2 className="p-4 text-white text-center text-5xl md:text-7xl font-medium">
           Hello, My Name Is <span>Hassan Fathy</span>
         </h2>
-        <p className="text-white text-center text-xl lg:text-2xl font-medium">
+        <p className="p-4 text-white text-center text-xl lg:text-2xl font-medium">
           I am junior full stack web developer. I am a
           solution-oriented and problem solver with 1 year of experience
           building and maintaining software and software architecture. I
