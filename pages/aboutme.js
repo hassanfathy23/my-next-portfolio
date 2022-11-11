@@ -1,9 +1,11 @@
 import Head from "next/head";
+import { useSelector } from "react-redux";
 
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Image from "next/image";
 import Link from "next/link";
+import NavbarList from "../components/NavbarList";
 
 const myAge = Math.floor(
   (Date.now() - new Date("11-16-2001").getTime()) / (1000 * 60 * 60 * 24 * 365)
@@ -75,6 +77,7 @@ const requirementDetails = "all i need from you to start working is a design wit
 images, videos, ...etc and i will start work on your project instantly"
 
 export default function AboutMe() {
+  const dropdownMenuIsOpen = useSelector(state => state.ui.dropdownMenuIsOpen)
   return (
     <>
     <Head>
@@ -107,8 +110,8 @@ export default function AboutMe() {
                     <Image
                       src={item.image}
                       alt="can't display this image"
-                      width={250}
-                      height={200}
+                      width={700}
+                      height={500}
                     />
                     </div>
                     <div className="p-2 flex flex-col gap-2">
@@ -138,6 +141,7 @@ export default function AboutMe() {
             <p className="text-gray-600 text-lg lowercase">email: hassanfathy593@gmail.com <br /> phone: +201091284365</p>
           </div>
         </div>
+        {dropdownMenuIsOpen && <NavbarList />}
       </main>
     </Layout>
     </>

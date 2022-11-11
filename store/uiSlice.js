@@ -8,14 +8,20 @@ export const uiSlice = createSlice({
   },
   reducers: {
     openModal: (state) => {
-      state.modalIsOpen = !state.modalIsOpen;
+      state.modalIsOpen = true;
+    },
+    closeModal: state => {
+      state.modalIsOpen = false
     },
     openDropdownMenu: (state) => {
-      state.dropdownMenuIsOpen = !state.dropdownMenuIsOpen
+      state.dropdownMenuIsOpen = true
+    },
+    closeDropdownMenu: state => {
+      state.dropdownMenuIsOpen = false
     },
   },
 });
 
-export const { openModal, openDropdownMenu } = uiSlice.actions;
+export const { openModal, closeModal, openDropdownMenu, closeDropdownMenu } = uiSlice.actions;
 
 export default uiSlice.reducer;
