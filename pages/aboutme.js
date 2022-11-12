@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useSelector } from "react-redux";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+// import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import Layout from "../components/Layout";
 import Header from "../components/Header";
@@ -8,12 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import NavbarList from "../components/NavbarList";
 
-const myAge = Math.floor(
-  (Date.now() - new Date("11-16-2001").getTime()) / (1000 * 60 * 60 * 24 * 365)
-);
-
 const personalInfo = `my name is hassan fathy, i'm a junior full stack from egypt, \
-i'm ${myAge} years old, i was studying chemistry major and i dropped out to focus \
+i'm 21 years old, i was studying chemistry major and i dropped out to focus \
 on programing. i also like watching soccer, i'm a fan of bayern munchen, i also \
 like hip hop music, my top five are eminem, jayz, 2pac, biggie, reggie.`;
 
@@ -121,19 +117,19 @@ export default function AboutMe() {
         />
       </Head>
       <Layout>
-        <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center bg-gray-50 dark:bg-black rounded-2xl">
+         <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center bg-gray-50 dark:bg-black rounded-2xl">
           <Header content="who am i?" />
           <div className="w-full lg:w-10/12 px-4 sm:px-8 py-4 flex flex-col gap-20">
-            <div className="flex flex-col gap-2 animate__animated animate__fadeInLeft">
+            <div className="flex flex-col gap-2">
               <h2 className="text-2xl font-medium dark:text-gray-200">personal information</h2>
               <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">{personalInfo}</p>
             </div>
-            <div className="flex flex-col gap-2 animate__animated animate__fadeInRight">
+            <div className="flex flex-col gap-2">
               <h2 className="text-2xl font-medium dark:text-gray-200">experience</h2>
               <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">
                 {experienceHeader}
               </p>
-              <div className="flex flex-col gap-2 animate__animated animate__fadeInRight">
+              <div className="flex flex-col gap-2">
                 {myWorks.map((item) => (
                   <Link href={item.link} key={item.id}>
                     <div className="md:px-4 md:py-2 flex flex-col md:flex-row-reverse items-center gap-2 rounded-xl shadow-md shadow-black/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-black/5">
@@ -161,30 +157,24 @@ export default function AboutMe() {
                 ))}
               </div>
             </div>
-            <AnimationOnScroll animateIn="animate__fadeInLeft">
               <div>
                 <h2 className="text-2xl font-medium dark:text-gray-200">pricing</h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">
                   {pricingDetails}
                 </p>
               </div>
-            </AnimationOnScroll>
-            <AnimationOnScroll animateIn="animate__fadeInRight">
               <div className=" animate__animated animate__fadeInRight">
                 <h2 className="text-2xl font-medium dark:text-gray-200">requirement</h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">
                   {requirementDetails}
                 </p>
               </div>
-            </AnimationOnScroll>
-            <AnimationOnScroll animateIn="animate__fadeInLeft">
               <div>
                 <h2 className="text-2xl font-medium dark:text-gray-200">contact info</h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">
                   email: hassanfathy593@gmail.com <br /> phone: +201091284365
                 </p>
               </div>
-            </AnimationOnScroll>
           </div>
           {dropdownMenuIsOpen && <NavbarList />}
         </main>
