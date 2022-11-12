@@ -17,9 +17,9 @@ export default function Navbar() {
   const [contactFill, setContactFill] = useState("6b7280");
 
   return (
-    <div className="w-full fixed top-0 bg-white/95 z-50">
+    <div className="w-full fixed top-0 bg-white/95 dark:bg-black z-50">
       <nav className="py-3 px-6 flex flex-row justify-between items-center">
-        <Link href="/" className="cursor-pointer text-4xl font-medium italic">
+        <Link href="/" className="cursor-pointer text-4xl font-medium italic dark:text-gray-300">
           Hassan
         </Link>
         <div className="hidden md:flex md:flex-row md:justify-between md:gap-3">
@@ -36,8 +36,8 @@ export default function Navbar() {
                   fill="none"
                   stroke="currentColor"
                   className={`${
-                    asPath === "/" ? "stroke-gray-700" : `stroke-gray-500`
-                  } group-hover:stroke-gray-700`}
+                    asPath === "/" ? "stroke-gray-700 dark:stroke-gray-400" : `stroke-gray-500 dark:stroke-200`
+                  } group-hover:stroke-gray-700 dark:group-hover:stroke-gray-400`}
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -45,9 +45,9 @@ export default function Navbar() {
                 />
               </svg>
               <h3
-                className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
-                  asPath === "/" && "text-gray-700"
-                } group-hover:text-gray-700`}
+                className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium transition-all duration-150 ${
+                  asPath === "/" && "text-gray-700 dark:text-gray-400"
+                } group-hover:text-gray-700 dark:group-hover:text-gray-400`}
               >
                 home
               </h3>
@@ -59,7 +59,7 @@ export default function Navbar() {
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
                 height="1em"
-                className="fill-gray-500"
+                className="fill-gray-500 dark:fill-gray-200"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 1024 1024"
               >
@@ -73,9 +73,9 @@ export default function Navbar() {
                 />
               </svg>
               <h3
-                className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
-                  asPath === "/aboutme" && "text-gray-700"
-                } group-hover:text-gray-700`}
+                className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium transition-all duration-150 ${
+                  asPath === "/aboutme" && "text-gray-700 dark:text-gray-400"
+                } group-hover:text-gray-700 dark:group-hover:text-gray-400`}
               >
                 about me
               </h3>
@@ -104,9 +104,9 @@ export default function Navbar() {
             </svg>
             <h3
               onClick={() => dispatch(openModal())}
-              className={`px-2 py-1 cursor-pointer text-gray-500 font-medium animate-frequency ${
+              className={`px-2 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium animate-frequency ${
                 modalIsOpen && "animate-none text-gray-700"
-              } hover:animate-none transition-all duration-150 hover:text-gray-700`}
+              } hover:animate-none transition-all duration-150 hover:text-gray-700 dark:hover:text-gray-400`}
             >
               contact me
             </h3>

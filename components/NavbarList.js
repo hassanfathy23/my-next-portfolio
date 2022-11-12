@@ -11,7 +11,7 @@ export default function NavbarList() {
     const modalIsOpen = useSelector(state => state.ui.modalIsOpen)
     const dispatch = useDispatch()
   return (
-    <div className="fixed md:hidden px-2 py-1 bg-white top-5 right-1 z-50 animate-fadeIn">
+    <div className="fixed md:hidden px-2 py-1 bg-white dark:bg-black top-5 right-1 z-50 animate-fadeIn">
       <div className="flex flex-col justify-center gap-3">
         <Link href="/">
           <div className="flex flex-row justify-start items-center group">
@@ -26,8 +26,8 @@ export default function NavbarList() {
                 fill="none"
                 stroke="currentColor"
                 className={`${
-                  asPath === "/" ? "stroke-gray-700" : `stroke-gray-500`
-                } group-hover:stroke-gray-700`}
+                  asPath === "/" ? "stroke-gray-700 dark:stroke-gray-400" : `stroke-gray-500 dark:stroke-gray-200`
+                } group-hover:stroke-gray-400 dark:group-hover:stroke-gray-200`}
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -35,9 +35,9 @@ export default function NavbarList() {
               />
             </svg>
             <h3
-              className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
-                asPath === "/" && "text-gray-700"
-              } group-hover:text-gray-700`}
+              className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium transition-all duration-150 ${
+                asPath === "/" && "text-gray-700 dark:text-gray-400"
+              } group-hover:text-gray-700 dark:group-hover:text-gray-700`}
             >
               home
             </h3>
@@ -49,7 +49,7 @@ export default function NavbarList() {
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
-              className="fill-gray-500"
+              className="fill-gray-500 dark:fill-gray-200"
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 1024 1024"
             >
@@ -63,9 +63,9 @@ export default function NavbarList() {
               />
             </svg>
             <h3
-              className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
-                asPath === "/aboutme" && "text-gray-700"
-              } group-hover:text-gray-700`}
+              className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium transition-all duration-150 ${
+                asPath === "/aboutme" && "text-gray-700 dark:text-gray-400"
+              } group-hover:text-gray-700 dark:group-hover:text-gray-400`}
             >
               about me
             </h3>
@@ -94,9 +94,9 @@ export default function NavbarList() {
           </svg>
           <h3
             onClick={() => dispatch(openModal())}
-            className={`px-2 py-1 cursor-pointer text-gray-500 font-medium animate-frequency ${
-              modalIsOpen && "animate-none text-gray-700"
-            } hover:animate-none transition-all duration-150 hover:text-gray-700`}
+            className={`px-2 py-1 cursor-pointer text-gray-500 dark:text-gray-200 font-medium animate-frequency ${
+              modalIsOpen && "animate-none text-gray-700 dark:text-gray-400"
+            } hover:animate-none transition-all duration-150 hover:text-gray-700 dark:hover:text-gray-400`}
           >
             contact me
           </h3>
