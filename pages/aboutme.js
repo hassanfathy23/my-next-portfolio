@@ -124,16 +124,16 @@ export default function AboutMe() {
         <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center bg-gray-50 rounded-2xl">
           <Header content="who am i?" />
           <div className="w-full lg:w-10/12 px-4 sm:px-8 py-4 flex flex-col gap-20">
-            <div className="flex flex-col gap-2 animate__animated animate__fadeInLeft">
+            <div className="flex flex-col gap-2">
               <h2 className="text-2xl font-medium">personal information</h2>
               <p className="text-gray-600 text-lg lowercase">{personalInfo}</p>
             </div>
-            <div className="flex flex-col gap-2 animate__animated animate__fadeInRight">
+            <div className="flex flex-col gap-2">
               <h2 className="text-2xl font-medium">experience</h2>
               <p className="text-gray-600 text-lg lowercase">
                 {experienceHeader}
               </p>
-              <div className="flex flex-col gap-2 animate__animated animate__fadeInRight">
+              <div className="flex flex-col gap-2">
                 {myWorks.map((item) => (
                   <Link href={item.link} key={item.id}>
                     <div className="md:px-4 md:py-2 flex flex-col md:flex-row-reverse items-center gap-2 rounded-xl shadow-md shadow-black/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-black/5">
