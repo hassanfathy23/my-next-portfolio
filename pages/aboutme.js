@@ -173,7 +173,7 @@ export default function AboutMe() {
                   {pricingDetails}
                 </p>
               </div>
-              <div className=" animate__animated animate__fadeInRight">
+              <div>
                 <h2 className="text-2xl font-medium dark:text-gray-200">requirement</h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg lowercase">
                   {requirementDetails}
