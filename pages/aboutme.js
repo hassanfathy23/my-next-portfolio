@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import Head from "next/head";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 // import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import Layout from "../components/Layout";
@@ -7,6 +8,8 @@ import Header from "../components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import NavbarList from "../components/NavbarList";
+import { closeModal, closeDropdownMenu } from "../store/uiSlice";
+
 
 const personalInfo = `my name is hassan fathy, i'm a junior full stack from egypt, \
 i'm 21 years old, i was studying chemistry major and i dropped out to focus \
@@ -81,6 +84,13 @@ export default function AboutMe() {
   const dropdownMenuIsOpen = useSelector(
     (state) => state.ui.dropdownMenuIsOpen
   );
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+  dispatch(closeModal())
+  dispatch(closeDropdownMenu())
+  }, [])
   return (
     <>
       <Head>

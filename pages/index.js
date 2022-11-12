@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Head from "next/head";
 
@@ -9,6 +10,7 @@ import Stack from "../components/Stack";
 import Header from "../components/Header";
 import ContactList from "../components/ContactList";
 import Layout from "../components/Layout";
+import { closeModal, closeDropdownMenu } from "../store/uiSlice";
 
 export const contactList = [
   {
@@ -221,6 +223,11 @@ const miscStack = [
 export default function Home() {
   const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(closeModal())
+    dispatch(closeDropdownMenu())
+    }, [])
 
   return (
     <>
