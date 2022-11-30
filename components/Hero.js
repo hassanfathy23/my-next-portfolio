@@ -5,26 +5,29 @@ import { useRouter } from "next/router";
 
 import { openModal } from "../store/uiSlice";
 import NavbarList from "./NavbarList";
+import AnimatedBg from "./UI/AnimatedBg";
 
 export default function Album() {
   const dispatch = useDispatch();
-  const router = useRouter()
-  const { asPath } = router
-  const modalIsOpen = useSelector(state => state.ui.modalIsOpen)
-  const dropdownMenuIsOpen = useSelector(state => state.ui.dropdownMenuIsOpen)
+  const router = useRouter();
+  const { asPath } = router;
+  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
+  const dropdownMenuIsOpen = useSelector(
+    (state) => state.ui.dropdownMenuIsOpen
+  );
 
   return (
-    <main className="w-full relative flex items-center justify-center h-[800px] mt-16 mb-12 overflow-hidden">
-      <div className="relative w-full md:w-3/5 xl:w-2/5 h-full z-30 py-28 flex flex-col gap-10 justify-center animate-fadeInSlowely">
+    <AnimatedBg>
+    <main className="w-full absolute flex items-center justify-center h-full mt-16 mb-12 overflow-hidden">
+      <div className="relative w-full md:w-3/5 xl:w-2/5 h-full z-30 py-28 flex flex-col gap-5 justify-center animate-fadeInSlowely">
         <h2 className="p-4 text-white text-center text-5xl md:text-7xl font-medium">
           Hello, My Name Is <span>Hassan Fathy</span>
         </h2>
         <p className="p-4 text-white text-center text-xl lg:text-2xl font-medium">
-          I am junior full stack web developer. I am a
-          solution-oriented and problem solver with 1 year of experience
-          building and maintaining software and software architecture. I
-          am highly skilled in communication, collaboration, and
-          technical documentation.
+          I am junior full stack web developer. I am a solution-oriented and
+          problem solver with 1 year of experience building and maintaining
+          software and software architecture. I am highly skilled in
+          communication, collaboration, and technical documentation.
           <br />
           <a
             href="#front-stack"
@@ -47,7 +50,7 @@ export default function Album() {
           </button>
         </div>
       </div>
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -55,8 +58,9 @@ export default function Album() {
       >
         <source src="\videos\animated-background.mp4" type="video/mp4" />
         your browser can not display this video
-      </video>
-       {dropdownMenuIsOpen && <NavbarList />}
+  </video> */}
+      {dropdownMenuIsOpen && <NavbarList />}
     </main>
+    </AnimatedBg>
   );
 }
