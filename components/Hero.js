@@ -2,10 +2,24 @@ import Link from "next/link";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { Inconsolata, Roboto } from '@next/font/google'
 
 import { openModal } from "../store/uiSlice";
 import NavbarList from "./NavbarList";
 import AnimatedBg from "./UI/AnimatedBg";
+
+const inconsolata = Inconsolata({
+  weight: '300',
+  variable: '--font-inconsolata',
+  subsets: ['latin']
+})
+
+const roboto = Roboto({
+  weight: '300',
+  variable: '--font-roboto',
+  subsets: ['latin']
+})
+
 
 export default function Album() {
   const dispatch = useDispatch();
@@ -18,12 +32,12 @@ export default function Album() {
 
   return (
     <AnimatedBg>
-    <main className="w-full absolute flex items-center justify-center h-full mt-16 mb-12 overflow-hidden">
+    <main className={`w-full absolute flex items-center justify-center h-full mt-16 mb-12 overflow-hidden`}>
       <div className="relative w-full md:w-3/5 xl:w-2/5 h-full z-30 py-28 flex flex-col gap-5 justify-center animate-fadeInSlowely">
-        <h2 className="p-4 text-white text-center text-5xl md:text-7xl font-medium">
+        <h2 className={`p-4 text-white text-center text-5xl md:text-7xl ${inconsolata.variable} font-inconsolata`}>
           Hello, My Name Is <span>Hassan Fathy</span>
         </h2>
-        <p className="p-4 text-white text-center text-xl lg:text-2xl font-medium">
+        <p className={`p-4 text-white text-center text-xl lg:text-2xl ${roboto.variable} font-roboto`}>
           I am junior full stack web developer. I am a solution-oriented and
           problem solver with 1 year of experience building and maintaining
           software and software architecture. I am highly skilled in

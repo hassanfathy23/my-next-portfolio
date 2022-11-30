@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -23,16 +26,26 @@ module.exports = {
         //   '0%, 25%': {transform: 'scale(6)'},
         //   '25%, 50%': {transform: 'scale(4)'},
         //   '50%, 100%': {transform: 'scale(1)'},
-        // }
+        // },
+        fromTopToBottom: {
+          'from': {transform: 'translateY(-100%)', opacity: 0},
+          'to': {transform: 'translateY(0%)', opacity: 1}
+        }
       },
       animation: {
         frequency: 'frequency 1s ease-in-out infinite',
         fadeIn: 'fadeIn .3s ease-in-out',
         fadeInSlowely: 'fadeIn 1s ease-in-out',
         zoomIn: 'zoomIn 0.3s ease-in-out',
-        // zoomOut: 'zoomOut 0.3s'
+        // zoomOut: 'zoomOut 0.3s',
+        fromTopToBottom: 'fromTopToBottom 0.5s'
       },
-      
+      fontFamily: {
+        'mono': ['var(--font-space-mono)', ...fontFamily.sans],
+        'playfair': ['var(--font-playfair)', ...fontFamily.mono],
+        'inconsolata': ['var(--font-inconsolata)', ...fontFamily.mono],
+        'roboto': ['var(--font-roboto)', ...fontFamily.sans],
+      }
     },
   },
   plugins: [],

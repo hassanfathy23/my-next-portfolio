@@ -121,16 +121,16 @@ export default function AboutMe() {
         />
       </Head>
       <Layout>
-        <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center bg-gray-50 rounded-2xl">
+        <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center overflow-hidden bg-gray-50 rounded-2xl">
           <Header content="who am i?" />
           <div className="w-full lg:w-10/12 px-4 sm:px-8 py-4 flex flex-col gap-20">
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-medium">personal information</h2>
-              <p className="text-gray-600 text-lg lowercase">{personalInfo}</p>
+              <h2 className="text-2xl font-medium animate-fromTopToBottom">personal information</h2>
+              <p className="text-gray-600 text-lg lowercase animate-[fromTopToBottom_.3s_.1s]">{personalInfo}</p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-medium">experience</h2>
-              <p className="text-gray-600 text-lg lowercase">
+              <h2 className="text-2xl font-medium animate-fromTopToBottom">experience</h2>
+              <p className="text-gray-600 text-lg lowercase animate-[fromTopToBottom_.3s_.1s] ">
                 {experienceHeader}
               </p>
               <div className="flex flex-col gap-2">
@@ -161,7 +161,7 @@ export default function AboutMe() {
                 ))}
               </div>
             </div>
-            <AnimationOnScroll animateIn="animate__fadeInLeft">
+            <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce>
               <div>
                 <h2 className="text-2xl font-medium">pricing</h2>
                 <p className="text-gray-600 text-lg lowercase">
@@ -169,7 +169,7 @@ export default function AboutMe() {
                 </p>
               </div>
             </AnimationOnScroll>
-            <AnimationOnScroll animateIn="animate__fadeInRight">
+            <AnimationOnScroll animateIn="animate__fadeInRight" animateOnce>
               <div className=" animate__animated animate__fadeInRight">
                 <h2 className="text-2xl font-medium">requirement</h2>
                 <p className="text-gray-600 text-lg lowercase">
@@ -177,7 +177,7 @@ export default function AboutMe() {
                 </p>
               </div>
             </AnimationOnScroll>
-            <AnimationOnScroll animateIn="animate__fadeInLeft">
+            <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce>
               <div>
                 <h2 className="text-2xl font-medium">contact info</h2>
                 <p className="text-gray-600 text-lg lowercase">
