@@ -4,6 +4,15 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['res.cloudinary.com']
+  },
+  async redirects() {
+    return [
+      {
+        source: '/features',
+        destination: '/',
+        permanent: false
+      }
+    ]
   }
 }
 
