@@ -12,7 +12,7 @@ export default function NavbarList() {
     const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
     const dispatch = useAppDispatch()
   return (
-    <div className="fixed md:hidden px-2 py-1 bg-white top-5 right-1 z-50 animate-fadeIn">
+    <div className="fixed md:hidden px-2 py-1 bg-white dark:bg-black top-5 right-1 z-50 animate-fadeIn">
       <div className="flex flex-col justify-center gap-3">
         <Link href="/">
           <div className="flex flex-row justify-start items-center group">
@@ -36,9 +36,9 @@ export default function NavbarList() {
               />
             </svg>
             <h3
-              className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
+              className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium transition-all duration-150 ${
                 asPath === "/" && "text-gray-700"
-              } group-hover:text-gray-700`}
+              } group-hover:text-gray-700 dark:group-hover:text-gray-500`}
             >
               home
             </h3>
@@ -64,15 +64,15 @@ export default function NavbarList() {
               />
             </svg>
             <h3
-              className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
+              className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium transition-all duration-150 ${
                 asPath === "/aboutme" && "text-gray-700"
-              } group-hover:text-gray-700`}
+              } group-hover:text-gray-700 dark:group-hover:text-gray-500`}
             >
               about me
             </h3>
           </div>
         </Link>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center group">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -95,9 +95,9 @@ export default function NavbarList() {
           </svg>
           <h3
             onClick={() => dispatch(openModal())}
-            className={`px-2 py-1 cursor-pointer text-gray-500 font-medium animate-frequency ${
+            className={`px-2 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium animate-frequency ${
               modalIsOpen && "animate-none text-gray-700"
-            } hover:animate-none transition-all duration-150 hover:text-gray-700`}
+            } hover:animate-none transition-all duration-150 group-hover:text-gray-700 dark:group-hover:text-gray-500`}
           >
             contact me
           </h3>

@@ -1,7 +1,7 @@
 import classes from "./AnimatedBg.module.css";
 
 type AppProps = {
-  children: JSX.Element
+  children: React.ReactNode
 }
 
 function AnimatedBg({ children }: AppProps) {

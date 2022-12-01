@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 // import Navbar from "../components/Navbar";
@@ -239,7 +240,11 @@ const miscStack = [
 export default function Home() {
   const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
   const dispatch = useAppDispatch();
-
+  
+  useEffect(() => {
+    document.body.className = modalIsOpen ? 'overflow-hidden': ''
+  }, [modalIsOpen])
+  
   return (
     <>
       <Head>
@@ -276,7 +281,7 @@ export default function Home() {
         <Hero />
         {modalIsOpen && <ContactList list={contactList} />}
         <Features />
-        <Header content="tech stack" />
+        <Header content="tech stack" style="text-black dark:text-gray-300" />
         <Stack
           header="stack for front end"
           stack={frontStack}

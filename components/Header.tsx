@@ -2,7 +2,7 @@
 
 type AppProps = {
   content: string;
-  style?: React.CSSProperties
+  style?: string
 }
 
 export default function Header({content, style}: AppProps) {
