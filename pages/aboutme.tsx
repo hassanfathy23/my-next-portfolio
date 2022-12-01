@@ -1,19 +1,16 @@
 import Head from "next/head";
-import { useSelector } from "react-redux";
+import { useEffect } from 'react'
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
+import { useAppSelector } from '../store/hooks';
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import NavbarList from "../components/NavbarList";
 
-const myAge = Math.floor(
-  (Date.now() - new Date("11-16-2001").getTime()) / (1000 * 60 * 60 * 24 * 365)
-);
-
 const personalInfo = `my name is hassan fathy, i'm a junior full stack from egypt, \
-i'm ${myAge} years old, i was studying chemistry major and i dropped out to focus \
+i'm 21 years old, i was studying chemistry major and i dropped out to focus \
 on programing. i also like watching soccer, i'm a fan of bayern munchen, i also \
 like hip hop music, my top five are eminem, jayz, 2pac, biggie, reggie.`;
 
@@ -31,7 +28,7 @@ const myWorks = [
         payment, shipping and products, brands, categories, sub-categories listings. \
         i used next.js, react.js, tailwindcss, redux-toolkit, mongodb, express.js to develop \
         this project in less than 45 days",
-    link: "https://web-production-d092.up.railway.app/",
+    link: "https://ecommerce-65vq.onrender.com/",
     image:
       "https://res.cloudinary.com/oasis321/image/upload/v1667757982/ecommerce-backend/Screenshot_2022-10-26_103342_ugxs30.jpg",
     from: "sep 9 2022",
@@ -82,9 +79,15 @@ const requirementDetails =
 images, videos, ...etc and i will start work on your project instantly";
 
 export default function AboutMe() {
-  const dropdownMenuIsOpen = useSelector(
+  const dropdownMenuIsOpen = useAppSelector(
     (state) => state.ui.dropdownMenuIsOpen
   );
+  const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
+
+  useEffect(() => {
+    document.body.className = modalIsOpen ? 'overflow-hidden': ''
+  }, [modalIsOpen])
+  
   return (
     <>
       <Head>
@@ -121,16 +124,16 @@ export default function AboutMe() {
         />
       </Head>
       <Layout>
-        <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center overflow-hidden bg-gray-50 rounded-2xl">
-          <Header content="who am i?" />
+        <main className="w-full lg:w-10/12 my-20 flex flex-col gap-4 items-center overflow-hidden bg-gray-50 dark:bg-black rounded-2xl">
+          <Header content="who am i?" style="text-black dark:text-gray-300" />
           <div className="w-full lg:w-10/12 px-4 sm:px-8 py-4 flex flex-col gap-20">
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-medium animate-fromTopToBottom">personal information</h2>
-              <p className="text-gray-600 text-lg lowercase animate-[fromTopToBottom_.3s_.1s]">{personalInfo}</p>
+              <h2 className="text-2xl dark:text-gray-400 font-medium animate-fromTopToBottom">personal information</h2>
+              <p className="text-gray-600 dark:text-gray-500 text-lg lowercase animate-[fromTopToBottom_.3s_.1s]">{personalInfo}</p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-medium animate-fromTopToBottom">experience</h2>
-              <p className="text-gray-600 text-lg lowercase animate-[fromTopToBottom_.3s_.1s] ">
+              <h2 className="text-2xl dark:text-gray-400 font-medium animate-fromTopToBottom">experience</h2>
+              <p className="text-gray-600 dark:text-gray-500 text-lg lowercase animate-[fromTopToBottom_.3s_.1s] ">
                 {experienceHeader}
               </p>
               <div className="flex flex-col gap-2">
@@ -147,12 +150,12 @@ export default function AboutMe() {
                       </div>
                       <div className="p-2 flex flex-col gap-2">
                         <div className="py-2 flex flex-row gap-2">
-                          <h3 className="text-xl font-medium">{item.title}</h3>
-                          <i className="text-gray-600 font-medium">
+                          <h3 className="text-xl dark:text-gray-400 font-medium">{item.title}</h3>
+                          <i className="text-gray-600 dark:text-gray-500 font-medium">
                             from {item.from} to {item.to}
                           </i>
                         </div>
-                        <p className="text-gray-600 lowercase">
+                        <p className="text-gray-600 dark:text-gray-500 lowercase">
                           {item.description}
                         </p>
                       </div>
@@ -163,24 +166,24 @@ export default function AboutMe() {
             </div>
             <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce>
               <div>
-                <h2 className="text-2xl font-medium">pricing</h2>
-                <p className="text-gray-600 text-lg lowercase">
+                <h2 className="text-2xl dark:text-gray-400 font-medium">pricing</h2>
+                <p className="text-gray-600 dark:text-gray-500 text-lg lowercase">
                   {pricingDetails}
                 </p>
               </div>
             </AnimationOnScroll>
             <AnimationOnScroll animateIn="animate__fadeInRight" animateOnce>
               <div className=" animate__animated animate__fadeInRight">
-                <h2 className="text-2xl font-medium">requirement</h2>
-                <p className="text-gray-600 text-lg lowercase">
+                <h2 className="text-2xl dark:text-gray-400 font-medium">requirement</h2>
+                <p className="text-gray-600 dark:text-gray-500 text-lg lowercase">
                   {requirementDetails}
                 </p>
               </div>
             </AnimationOnScroll>
             <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce>
               <div>
-                <h2 className="text-2xl font-medium">contact info</h2>
-                <p className="text-gray-600 text-lg lowercase">
+                <h2 className="text-2xl dark:text-gray-400 font-medium">contact info</h2>
+                <p className="text-gray-600 dark:text-gray-500 text-lg lowercase">
                   email: hassanfathy593@gmail.com <br /> phone: +201091284365
                 </p>
               </div>

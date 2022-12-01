@@ -1,25 +1,22 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 import { openModal, openDropdownMenu } from "../store/uiSlice";
-import ContactList from "../components/ContactList";
+import ContactList from "./ContactList";
 import { contactList } from "../pages/index";
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function Navbar() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const { asPath } = router;
-  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
-  const [aboutFill, setAboutFill] = useState("6b7280");
-  const [contactFill, setContactFill] = useState("6b7280");
+  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
 
   return (
-    <div className="w-full fixed top-0 bg-white/95 z-50">
+    <div className="w-full fixed top-0 bg-white/95 dark:bg-black/95 z-50">
       <nav className="py-3 px-6 flex flex-row justify-between items-center">
-        <Link href="/" className="cursor-pointer text-4xl font-medium italic">
+        <Link href="/" className="cursor-pointer text-4xl dark:text-white font-medium italic">
           Hassan
         </Link>
         <div className="hidden md:flex md:flex-row md:justify-between md:gap-3">
@@ -45,9 +42,9 @@ export default function Navbar() {
                 />
               </svg>
               <h3
-                className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
-                  asPath === "/" && "text-gray-700"
-                } group-hover:text-gray-700`}
+                className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium transition-all duration-150 ${
+                  asPath === "/" && "text-gray-700 dark:text-gray-300"
+                } group-hover:text-gray-700 dark:group-hover:text-gray-300`}
               >
                 home
               </h3>
@@ -73,15 +70,15 @@ export default function Navbar() {
                 />
               </svg>
               <h3
-                className={`px-1 py-1 cursor-pointer text-gray-500 font-medium transition-all duration-150 ${
+                className={`px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium transition-all duration-150 ${
                   asPath === "/aboutme" && "text-gray-700"
-                } group-hover:text-gray-700`}
+                } group-hover:text-gray-700 dark:group-hover:text-gray-300`}
               >
                 about me
               </h3>
             </div>
           </Link>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -104,9 +101,9 @@ export default function Navbar() {
             </svg>
             <h3
               onClick={() => dispatch(openModal())}
-              className={`px-2 py-1 cursor-pointer text-gray-500 font-medium animate-frequency ${
+              className={`px-2 py-1 cursor-pointer text-gray-500 dark:text-gray-400 font-medium animate-frequency ${
                 modalIsOpen && "animate-none text-gray-700"
-              } hover:animate-none transition-all duration-150 hover:text-gray-700`}
+              } hover:animate-none transition-all duration-150 group-hover:text-gray-700 dark:group-hover:text-gray-300`}
             >
               contact me
             </h3>

@@ -1,4 +1,7 @@
 import { Space_Mono, Playfair_Display, Inconsolata } from '@next/font/google'
+import { useEffect } from 'react'
+
+import { useAppSelector } from '../store/hooks'
 
 // import AnimatedBg from "../components/UI/AnimatedBg";
 
@@ -22,6 +25,13 @@ const inconsolata = Inconsolata({
 })
 
 function FeaturesPage() {
+
+    const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
+
+    useEffect(() => {
+        document.body.className = modalIsOpen ? 'overflow-hidden': ''
+      }, [modalIsOpen])
+      
     return ( 
         <>
         {/* <AnimatedBg /> */}

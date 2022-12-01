@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
 import Head from "next/head";
+import { useEffect } from 'react'
 
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 // import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 // import Cta from "../components/Cta";
@@ -55,18 +56,21 @@ const frontStack = [
     url: "vscode-icons:file-type-html",
     name: "html5",
     description: "html is used to develop the structure of the front end",
+    important: false
   },
   {
     id: "101",
     url: "vscode-icons:file-type-css",
     name: "css3",
     description: "css is used to style the website and give it fresh look",
+    important: false
   },
   {
     id: "102",
     url: "logos:javascript",
     name: "javascriptES6",
     description: "used to give the website interactivity",
+    important: false
   },
   {
     id: "103",
@@ -90,6 +94,7 @@ const frontStack = [
     name: "redux-toolkit",
     description:
       "javascript best library for managing the state all over the application",
+      important: false
   },
   {
     id: "106",
@@ -97,6 +102,7 @@ const frontStack = [
     name: "tailwindcss",
     description:
       "css frame work that helps scaling web apps and makes it quicker and easier to maintain any website",
+      important: false
   },
   {
     id: "107",
@@ -115,6 +121,7 @@ const backStack = [
     name: "nodejs",
     description:
       "open source server environment allows you to build backend for websites using javascript syntax",
+      important: false
   },
   {
     id: "2",
@@ -122,6 +129,7 @@ const backStack = [
     name: "expressjs",
     description:
       "node library that makes the code written minimal and more flexible",
+      important: false
   },
   {
     id: "3",
@@ -129,12 +137,14 @@ const backStack = [
     name: "mongodb",
     description:
       "nosql database allows you to create data sets for web applications",
+      important: false
   },
   {
     id: "4",
     url: "game-icons:goose",
     name: "mongoose",
     description: "node based object data modeling library for mongodb",
+    important: false
   },
   {
     id: "5",
@@ -142,6 +152,7 @@ const backStack = [
     name: "jsonwebtoken",
     description:
       "npm package that add security layers to web apps like login, signup, cookies, sessions and logout",
+      important: false
   },
   {
     id: "6",
@@ -165,6 +176,7 @@ const backStack = [
     name: "restAPI",
     description:
       "REpresentational State Transfer and an architectural style for distributed hypermedia systems",
+      important: false
   },
 ];
 
@@ -175,6 +187,7 @@ const miscStack = [
     name: "git",
     description:
       "version control system handles processes like saving files into the local machine",
+      important: false
   },
   {
     id: "201",
@@ -182,6 +195,7 @@ const miscStack = [
     name: "github",
     description:
       "code hosting platform for version control and collaboration, it's used for saving files on the cloud",
+      important: false
   },
   {
     id: "202",
@@ -189,18 +203,21 @@ const miscStack = [
     name: "npm",
     description:
       "node package manager, it's used for the purpose of downloading packages to be integrated in web apps",
+      important: false
   },
   {
     id: "203",
     url: "logos:cypress",
     name: "cypress",
     description: "javascript-based front end testing tool built for web apps",
+    important: false
   },
   {
     id: "204",
     url: "logos:vercel-icon",
     name: "vercel",
     description: "service built by nextjs team to host static web pages",
+    important: false
   },
   {
     id: "205",
@@ -208,6 +225,7 @@ const miscStack = [
     name: "heroku",
     description:
       "service for hosting web applications, web pages and all kinds of websites",
+      important: false
   },
   {
     id: "206",
@@ -215,13 +233,18 @@ const miscStack = [
     name: "railway",
     description:
       "service for hosting web applications, web pages and all kinds of websites",
+      important: false
   },
 ];
 
 export default function Home() {
-  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
-  const dispatch = useDispatch();
-
+  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
+  const dispatch = useAppDispatch();
+  
+  useEffect(() => {
+    document.body.className = modalIsOpen ? 'overflow-hidden': ''
+  }, [modalIsOpen])
+  
   return (
     <>
       <Head>
@@ -258,7 +281,7 @@ export default function Home() {
         <Hero />
         {modalIsOpen && <ContactList list={contactList} />}
         <Features />
-        <Header content="tech stack" />
+        <Header content="tech stack" style="text-black dark:text-gray-300" />
         <Stack
           header="stack for front end"
           stack={frontStack}
