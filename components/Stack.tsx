@@ -1,7 +1,19 @@
 import { Icon } from "@iconify/react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 
-export default function Stack({ stack, header, id }) {
+type AppProps = {
+  stack: {
+    id: string;
+    url: string;
+    name: string;
+    description: string;
+    important: boolean;
+  }[];
+  header: string;
+  id: string;
+}
+
+export default function Stack({ stack, header, id }: AppProps): JSX.Element {
   return (
     <div
       id={id}

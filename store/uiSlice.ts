@@ -1,11 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from './index';
+
+interface uiState {
+  modalIsOpen: boolean;
+  dropdownMenuIsOpen: boolean;
+}
+
+const initialState: uiState = {
+  modalIsOpen: false,
+  dropdownMenuIsOpen: false
+}
 
 export const uiSlice = createSlice({
   name: "ui",
-  initialState: {
-    modalIsOpen: false,
-    dropdownMenuIsOpen : false
-  },
+  initialState,
   reducers: {
     openModal: (state) => {
       state.modalIsOpen = true;
@@ -23,5 +33,8 @@ export const uiSlice = createSlice({
 });
 
 export const { openModal, closeModal, openDropdownMenu, closeDropdownMenu } = uiSlice.actions;
+
+export const selectDropdown = (state: RootState) => state.ui
+// export const selectModal = (state: RootState) => state.ui.modalIsOpen
 
 export default uiSlice.reducer;

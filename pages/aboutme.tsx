@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useSelector } from "react-redux";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
+import { useAppSelector } from '../store/hooks';
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Image from "next/image";
@@ -82,7 +83,7 @@ const requirementDetails =
 images, videos, ...etc and i will start work on your project instantly";
 
 export default function AboutMe() {
-  const dropdownMenuIsOpen = useSelector(
+  const dropdownMenuIsOpen = useAppSelector(
     (state) => state.ui.dropdownMenuIsOpen
   );
   return (

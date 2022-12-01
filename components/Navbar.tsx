@@ -1,20 +1,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 import { openModal, openDropdownMenu } from "../store/uiSlice";
-import ContactList from "../components/ContactList";
+import ContactList from "./ContactList";
 import { contactList } from "../pages/index";
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function Navbar() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const { asPath } = router;
-  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
-  const [aboutFill, setAboutFill] = useState("6b7280");
-  const [contactFill, setContactFill] = useState("6b7280");
+  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
 
   return (
     <div className="w-full fixed top-0 bg-white/95 z-50">

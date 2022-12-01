@@ -2,6 +2,15 @@ import Header from "./Header";
 import Modal from "./UI/Modal";
 import { Icon } from "@iconify/react";
 
+type AppProps = {
+  list: {
+    id: string;
+    url: string;
+    image: string;
+    title: string;
+  }[]
+}
+
 export default function ContactList({ list }) {
   return (
     <Modal background="bg-gray-50">

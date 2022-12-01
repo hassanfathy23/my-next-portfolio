@@ -8,7 +8,11 @@ const roboto = Roboto({
   subsets: ['latin']
 })
 
-export default function Layout({children}) {
+type AppProps = {
+  children: React.ReactNode
+}
+
+export default function Layout({children}: AppProps) {
     return (
       <div className={`${roboto.variable} font-roboto`}>
         <Navbar />

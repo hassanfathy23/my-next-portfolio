@@ -4,12 +4,13 @@ import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
 
 import { openModal, closeDropdownMenu } from '../store/uiSlice';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function NavbarList() {
     const router = useRouter()
     const { asPath } = router
-    const modalIsOpen = useSelector(state => state.ui.modalIsOpen)
-    const dispatch = useDispatch()
+    const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
+    const dispatch = useAppDispatch()
   return (
     <div className="fixed md:hidden px-2 py-1 bg-white top-5 right-1 z-50 animate-fadeIn">
       <div className="flex flex-col justify-center gap-3">

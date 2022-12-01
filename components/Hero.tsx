@@ -1,10 +1,11 @@
 import Link from "next/link";
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { Inconsolata, Roboto } from '@next/font/google'
 
 import { openModal } from "../store/uiSlice";
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 import NavbarList from "./NavbarList";
 import AnimatedBg from "./UI/AnimatedBg";
 
@@ -22,11 +23,11 @@ const roboto = Roboto({
 
 
 export default function Album() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const { asPath } = router;
-  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen);
-  const dropdownMenuIsOpen = useSelector(
+  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
+  const dropdownMenuIsOpen = useAppSelector(
     (state) => state.ui.dropdownMenuIsOpen
   );
 

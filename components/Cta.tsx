@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { useDispatch } from "react-redux"
 
 import { openModal } from "../store/uiSlice"
+import { useAppDispatch } from '../store/hooks';
 
 export default function Example() {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
     return (
       <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
