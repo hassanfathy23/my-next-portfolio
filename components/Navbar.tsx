@@ -6,6 +6,7 @@ import { openModal, openDropdownMenu } from "../store/uiSlice";
 import ContactList from "./ContactList";
 import { contactList } from "../pages/index";
 import { useAppDispatch, useAppSelector } from '../store/hooks';
+import DarkButton from "./DarkButton";
 
 export default function Navbar() {
   const dispatch = useAppDispatch();
@@ -109,7 +110,7 @@ export default function Navbar() {
             </h3>
           </div>
         </div>
-        <div></div>
+        <DarkButton />
           <div
             onClick={() => dispatch(openDropdownMenu())}
             className="md:hidden cursor-pointer"

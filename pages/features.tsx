@@ -1,43 +1,7 @@
-import { Space_Mono, Playfair_Display, Inconsolata } from '@next/font/google'
-import { useEffect } from 'react'
-
-import { useAppSelector } from '../store/hooks'
-
-// import AnimatedBg from "../components/UI/AnimatedBg";
-
-const spaceMono = Space_Mono({
-    weight: '400',
-    style: 'italic',
-    variable: '--font-space-mono'
-})
-
-const playFair = Playfair_Display({
-    weight: '400',
-    style: 'italic',
-    variable: '--font-playfair',
-    subsets: ['latin']
-})
-
-const inconsolata = Inconsolata({
-    weight: '300',
-    variable: '--font-inconsolata',
-    subsets: ['latin']
-})
-
-function FeaturesPage() {
-
-    const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
-
-    useEffect(() => {
-        document.body.className = modalIsOpen ? 'overflow-hidden': ''
-      }, [modalIsOpen])
-      
+function Features() {
     return ( 
-        <>
-        {/* <AnimatedBg /> */}
-        <p className={`w-full align-middle text-center text-4xl ${inconsolata.variable} font-inconsolata animate-fromTopToBottom`}>this is font test</p>
-        </>
+        <p className="w-full h-96 text-lg text-black dark:text-white bg-white dark:bg-black">this is features page</p>
      );
 }
 
-export default FeaturesPage;
+export default Features;

@@ -3,6 +3,7 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -19,7 +20,7 @@ module.exports = {
           'to': {opacity: 1}
         },
         zoomIn: {
-          'from': {transform: 'scale(0)'},
+          'from': {transform: 'scale(0.7)'},
           'to': {transform: 'scale(1)'}
         },
         // zoomOut: {
@@ -28,7 +29,7 @@ module.exports = {
         //   '50%, 100%': {transform: 'scale(1)'},
         // },
         fromTopToBottom: {
-          'from': {transform: 'translateY(-100%)', opacity: 0},
+          'from': {transform: 'translateY(-20%)', opacity: 0},
           'to': {transform: 'translateY(0%)', opacity: 1}
         }
       },
@@ -38,7 +39,7 @@ module.exports = {
         fadeInSlowely: 'fadeIn 1s ease-in-out',
         zoomIn: 'zoomIn 0.3s ease-in-out',
         // zoomOut: 'zoomOut 0.3s',
-        fromTopToBottom: 'fromTopToBottom 0.5s'
+        fromTopToBottom: 'fromTopToBottom 0.3s'
       },
       fontFamily: {
         'mono': ['var(--font-space-mono)', ...fontFamily.sans],

@@ -16,7 +16,7 @@ export default function Example() {
             <div className="inline-flex rounded-md shadow">
               <span
                 onClick={() => dispatch(openModal())}
-                className="inline-flex items-center justify-center animate-frequency hover:animate-none rounded-md border border-transparent dark:border-white cursor-pointer capitalize px-5 py-3 text-base font-medium text-black dark:text-white"
+                className="inline-flex items-center justify-center animate-frequency hover:animate-none rounded-md border border-black dark:border-white cursor-pointer capitalize px-5 py-3 text-base font-medium text-black dark:text-white"
               >
                 contact me
               </span>
@@ -24,7 +24,7 @@ export default function Example() {
             <div className="ml-3 inline-flex rounded-md shadow">
               <Link
                 href="/aboutme"
-                className="inline-flex items-center justify-center rounded-md border border-transparen px-5 py-3 text-base font-medium text-black dark:text-white"
+                className="inline-flex items-center justify-center rounded-md border border-black bg-black px-5 py-3 text-base font-medium text-white dark:text-white"
               >
                 Learn more
               </Link>

@@ -1,8 +1,7 @@
-import Navbar from './Navbar'
-import Cta from './Cta'
 import { Roboto } from '@next/font/google'
 
-import { useAppSelector } from '../store/hooks';
+import Navbar from './Navbar'
+import Cta from './Cta'
 
 const roboto = Roboto({
   weight: '500',
@@ -15,11 +14,10 @@ type AppProps = {
 }
 
 export default function Layout({children}: AppProps) {
-  // const modalIsOpen = useAppSelector(state => state.ui.modalIsOpen)
     return (
-      <div className={`${roboto.variable} font-roboto overflow-hidden`}>
+      <div className={`${roboto.variable} font-roboto overflow-hidden dark:bg-black`}>
         <Navbar />
-        <main className='flex flex-col gap-2 items-center relative overflow-hidden'>{children}</main>
+        <main className='flex flex-col gap-2 items-center relative overflow-hidden dark:bg-black'>{children}</main>
         <Cta />
       </div>
     )

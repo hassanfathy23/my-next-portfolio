@@ -2,9 +2,7 @@ import Head from "next/head";
 import { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-// import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-// import Cta from "../components/Cta";
 import Features from "../components/Features";
 import Stack from "../components/Stack";
 import Header from "../components/Header";

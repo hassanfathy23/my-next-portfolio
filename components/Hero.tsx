@@ -1,6 +1,5 @@
 import Link from "next/link";
 import * as React from "react";
-// import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { Inconsolata, Roboto } from '@next/font/google'
 
