@@ -110,7 +110,9 @@ export default function Navbar() {
             </h3>
           </div>
         </div>
+        <div className="hidden md:block">
         <DarkButton />
+        </div>
           <div
             onClick={() => dispatch(openDropdownMenu())}
             className="md:hidden cursor-pointer"

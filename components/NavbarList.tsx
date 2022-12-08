@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 
 import { openModal, closeDropdownMenu } from '../store/uiSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
+import DarkButton from './DarkButton';
 
 export default function NavbarList() {
     const router = useRouter()
@@ -101,6 +102,7 @@ export default function NavbarList() {
             contact me
           </h3>
         </div>
+        <DarkButton />
         <div
           onClick={() => dispatch(closeDropdownMenu())}
           className="flex justify-center items-center cursor-pointer"

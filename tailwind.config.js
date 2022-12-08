@@ -20,7 +20,7 @@ module.exports = {
           'to': {opacity: 1}
         },
         zoomIn: {
-          'from': {transform: 'scale(0.7)'},
+          'from': {transform: 'scale(0.5)'},
           'to': {transform: 'scale(1)'}
         },
         // zoomOut: {
@@ -29,7 +29,7 @@ module.exports = {
         //   '50%, 100%': {transform: 'scale(1)'},
         // },
         fromTopToBottom: {
-          'from': {transform: 'translateY(-20%)', opacity: 0},
+          'from': {transform: 'translateY(-50%)', opacity: 0},
           'to': {transform: 'translateY(0%)', opacity: 1}
         }
       },
@@ -37,9 +37,9 @@ module.exports = {
         frequency: 'frequency 1s ease-in-out infinite',
         fadeIn: 'fadeIn .3s ease-in-out',
         fadeInSlowely: 'fadeIn 1s ease-in-out',
-        zoomIn: 'zoomIn 0.3s ease-in-out',
+        zoomIn: 'zoomIn 0.05s ease-out',
         // zoomOut: 'zoomOut 0.3s',
-        fromTopToBottom: 'fromTopToBottom 0.3s'
+        fromTopToBottom: 'fromTopToBottom 0.5s ease-in-out'
       },
       fontFamily: {
         'mono': ['var(--font-space-mono)', ...fontFamily.sans],
