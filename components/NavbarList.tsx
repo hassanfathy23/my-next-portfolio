@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
 
 import { openModal, closeDropdownMenu } from '../store/uiSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
+import DarkButton from './DarkButton';
 
 export default function NavbarList() {
     const router = useRouter()
@@ -29,9 +29,9 @@ export default function NavbarList() {
                 className={`${
                   asPath === "/" ? "stroke-gray-700" : `stroke-gray-500`
                 } group-hover:stroke-gray-700`}
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M21 19v-6.733a4 4 0 0 0-1.245-2.9L13.378 3.31a2 2 0 0 0-2.755 0L4.245 9.367A4 4 0 0 0 3 12.267V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2Z"
               />
             </svg>
@@ -102,6 +102,7 @@ export default function NavbarList() {
             contact me
           </h3>
         </div>
+        <DarkButton />
         <div
           onClick={() => dispatch(closeDropdownMenu())}
           className="flex justify-center items-center cursor-pointer"

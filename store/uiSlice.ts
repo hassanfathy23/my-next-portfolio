@@ -35,6 +35,5 @@ export const uiSlice = createSlice({
 export const { openModal, closeModal, openDropdownMenu, closeDropdownMenu } = uiSlice.actions;
 
 export const selectDropdown = (state: RootState) => state.ui
-// export const selectModal = (state: RootState) => state.ui.modalIsOpen
 
 export default uiSlice.reducer;
