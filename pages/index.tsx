@@ -1,13 +1,15 @@
 import Head from "next/head";
 import { useEffect } from 'react'
+import dynamic from "next/dynamic";
 
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import Stack from "../components/Stack";
-import Header from "../components/Header";
-import ContactList from "../components/ContactList";
+const Hero =  dynamic(() => import("../components/Hero"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
+const Features =  dynamic(() => import("../components/Features"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
+const Stack =  dynamic(() => import("../components/Stack"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
+const Header =  dynamic(() => import("../components/Header"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
+const ContactList =  dynamic(() => import("../components/ContactList"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
 import Layout from "../components/Layout";
+import Spinner from "../components/UI/Spinner";
 
 export const contactList = [
   {

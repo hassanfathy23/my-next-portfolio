@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "next.config.js", "utils/darkMode.js"  ],
+, "next.config.js", "utils/darkMode.js", "pages/features.jsx"  ],
   "exclude": [
     "node_modules"
   ]
