@@ -10,7 +10,7 @@ function WorksList() {
         payment, shipping and products, brands, categories, sub-categories listings. \
         i used next.js, react.js, tailwindcss, redux-toolkit, mongodb, express.js to develop \
         this project in less than 45 days"
-        link="https://ecommerce-65vq.onrender.com/"
+        link="https://next-ecommerce-plum.vercel.app/"
         image="https://res.cloudinary.com/oasis321/image/upload/v1667757982/ecommerce-backend/Screenshot_2022-10-26_103342_ugxs30.jpg"
         from="sep 9 2022"
         to="oct 20 2022"
