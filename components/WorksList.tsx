@@ -31,16 +31,13 @@ function WorksList() {
        />
        <WorkItem 
         id={3}
-        title= "my 1st portfolio"
+        title= "user interface for restaurant"
         description=
-          "this is my first real website, i have built some websites before if but i can't say that they are \
-          fully functioning websites, this is the first website i coded html and css and javascript and deploy \
-          it to heroku, it's not that great when it comes to styling or content, but it was one of the few things \
-          that inspired me to continue my journey as a full stack developer. built using react.js, css, heroku \
-          for deployment"
-        link= "https://oas-is.herokuapp.com/"
-        image=
-          "https://res.cloudinary.com/oasis321/image/upload/v1667762223/ecommerce-backend/Frame_1_ktnaka.png"
+          "this is a user interface for a main page in a restaurant web application\
+          it&apos;s developed using top notch front end stack which includes: html, css, javascript, react, nextjs, tailwindcss, typescript and some ready-to-use components installed using npm\
+          this page is compatible with all kinds of devices(responsive) and very performant."
+        link= "https://singular-fenglisu-fafd59.netlify.app"
+        image="https://res.cloudinary.com/oasis321/image/upload/v1674029651/Screenshot_2023-01-18_080605_pyweon.jpg"
         from= "jan 8 2022"
         to= "jan 20 2022"
         />
