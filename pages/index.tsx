@@ -251,26 +251,26 @@ export default function Home() {
         <title>hassan fathy, full stack web developer</title>
         <meta
           name="description"
-          content="web developer for hire, hire someone to \
-          build your website who is expert in developing font \
-          end, back end, full stack web applications with \
-          experience of 1 year in software and software \
-          archticture, i will develop your website using \
-          html, css, javascript, react, next, redux, tailwind, \
-          mongodb, mongoose, mongodb atlas, node, restapi, graphql, \
-          typescript, npm, jsonwebtoken, git, github, cypress, \
+          content="web developer for hire, hire someone to 
+          build your website who is expert in developing font 
+          end, back end, full stack web applications with 
+          experience of 1 year in software and software 
+          archticture, i will develop your website using 
+          html, css, javascript, react, next, redux, tailwind, 
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
+          typescript, npm, jsonwebtoken, git, github, cypress, 
           heroku, railway, vercel"
           key="desc"
         />
         <meta property="og:title" content="hassan fathy, full stack web developer" />
-        <meta property="og:description" content="web developer for hire, hire someone to \
-          build your website who is expert in developing font \
-          end, back end, full stack web applications with \
-          experience of 1 year in software and software \
-          archticture, i will develop your website using \
-          html, css, javascript, react, next, redux, tailwind, \
-          mongodb, mongoose, mongodb atlas, node, restapi, graphql, \
-          typescript, npm, jsonwebtoken, git, github, cypress, \
+        <meta property="og:description" content="web developer for hire, hire someone to 
+          build your website who is expert in developing font 
+          end, back end, full stack web applications with 
+          experience of 1 year in software and software 
+          archticture, i will develop your website using 
+          html, css, javascript, react, next, redux, tailwind, 
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
+          typescript, npm, jsonwebtoken, git, github, cypress, 
           heroku, railway, vercel" />
         <meta
           property="og:image"
