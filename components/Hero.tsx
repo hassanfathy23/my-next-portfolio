@@ -39,7 +39,7 @@ export default function Album() {
         </h2>
         <p className={`p-4 text-white text-center text-xl lg:text-2xl ${roboto.variable} font-roboto`}>
           I am junior full stack web developer. I am a solution-oriented and
-          problem solver with 1 year of experience building and maintaining
+          problem solver with 2 years of experience building and maintaining
           software and software architecture. I am highly skilled in
           communication, collaboration, and technical documentation.
           <br />

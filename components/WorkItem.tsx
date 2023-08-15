@@ -16,11 +16,14 @@ function WorkItem({ link, id, image, title, description, from, to }: AppProps) {
     <Link href={link} key={id}>
       <div className="md:px-4 md:py-2 flex flex-col md:flex-row-reverse items-center gap-2 rounded-xl shadow-md shadow-black/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-black/5">
         <div className="px-4 md:px-0 flex justify-center items-center">
-          <div className="relative w-72 h-48 object-cover">
+          <div className="relative sm:w-72 w-[30rem] h-48 object-cover">
           <Image
             src={image}
             alt="can't display this image"
+            // width={288}
+            // height={192}
             fill
+            className="object-cover"
           />
           </div>
         </div>
