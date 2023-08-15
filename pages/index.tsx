@@ -3,13 +3,71 @@ import { useEffect } from 'react'
 import dynamic from "next/dynamic";
 
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-const Hero =  dynamic(() => import("../components/Hero"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
-const Features =  dynamic(() => import("../components/Features"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
+const Hero =  dynamic(() => import("../components/Hero"), {ssr: false, loading: () => <Spinner classes="h-screen" />});
+const Features =  dynamic(() => import("../components/Features"), {ssr: false, loading: () => <Spinner classes="h-screen" />});
 const Stack =  dynamic(() => import("../components/Stack"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
 const Header =  dynamic(() => import("../components/Header"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
 const ContactList =  dynamic(() => import("../components/ContactList"), {ssr: false, loading: () => <Spinner classes="h-[300px]" />});
 import Layout from "../components/Layout";
 import Spinner from "../components/UI/Spinner";
+
+
+export default function Home() {
+  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
+  const dispatch = useAppDispatch();
+  
+  useEffect(() => {
+    document.body.className = modalIsOpen ? 'overflow-hidden': ''
+  }, [modalIsOpen])
+  
+  return (
+    <>
+      <Head>
+        <title>hassan fathy, full stack web developer</title>
+        <meta
+          name="description"
+          content="web developer for hire, hire someone to 
+          build your website who is expert in developing font 
+          end, back end, full stack web applications with 
+          experience of 1 year in software and software 
+          archticture, i will develop your website using 
+          html, css, javascript, react, next, redux, tailwind, 
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
+          typescript, npm, jsonwebtoken, git, github, cypress, 
+          heroku, railway, vercel"
+          key="desc"
+        />
+        <meta property="og:title" content="hassan fathy, full stack web developer" />
+        <meta property="og:description" content="web developer for hire, hire someone to 
+          build your website who is expert in developing font 
+          end, back end, full stack web applications with 
+          experience of 1 year in software and software 
+          archticture, i will develop your website using 
+          html, css, javascript, react, next, redux, tailwind, 
+          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
+          typescript, npm, jsonwebtoken, git, github, cypress, 
+          heroku, railway, vercel" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg"
+        />
+      </Head>
+      <Layout>
+        <Hero />
+        {modalIsOpen && <ContactList list={contactList} />}
+        <Features />
+        <Header content="tech stack" style="text-black dark:text-gray-300" />
+        <Stack
+          header="stack for front end"
+          stack={frontStack}
+          id="front-stack"
+        />
+        <Stack header="stack for back end" stack={backStack} id="back-stack" />
+        <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
+      </Layout>
+    </>
+  );
+}
 
 export const contactList = [
   {
@@ -236,60 +294,3 @@ const miscStack = [
       important: false
   },
 ];
-
-export default function Home() {
-  const modalIsOpen = useAppSelector((state) => state.ui.modalIsOpen);
-  const dispatch = useAppDispatch();
-  
-  useEffect(() => {
-    document.body.className = modalIsOpen ? 'overflow-hidden': ''
-  }, [modalIsOpen])
-  
-  return (
-    <>
-      <Head>
-        <title>hassan fathy, full stack web developer</title>
-        <meta
-          name="description"
-          content="web developer for hire, hire someone to 
-          build your website who is expert in developing font 
-          end, back end, full stack web applications with 
-          experience of 1 year in software and software 
-          archticture, i will develop your website using 
-          html, css, javascript, react, next, redux, tailwind, 
-          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
-          typescript, npm, jsonwebtoken, git, github, cypress, 
-          heroku, railway, vercel"
-          key="desc"
-        />
-        <meta property="og:title" content="hassan fathy, full stack web developer" />
-        <meta property="og:description" content="web developer for hire, hire someone to 
-          build your website who is expert in developing font 
-          end, back end, full stack web applications with 
-          experience of 1 year in software and software 
-          archticture, i will develop your website using 
-          html, css, javascript, react, next, redux, tailwind, 
-          mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
-          typescript, npm, jsonwebtoken, git, github, cypress, 
-          heroku, railway, vercel" />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/oasis321/image/upload/v1667761555/ecommerce-backend/Screenshot_2022-11-05_200712_thqd95.jpg"
-        />
-      </Head>
-      <Layout>
-        <Hero />
-        {modalIsOpen && <ContactList list={contactList} />}
-        <Features />
-        <Header content="tech stack" style="text-black dark:text-gray-300" />
-        <Stack
-          header="stack for front end"
-          stack={frontStack}
-          id="front-stack"
-        />
-        <Stack header="stack for back end" stack={backStack} id="back-stack" />
-        <Stack header="stack for misc" stack={miscStack} id="misc-stack" />
-      </Layout>
-    </>
-  );
-}

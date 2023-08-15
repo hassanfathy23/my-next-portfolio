@@ -13,10 +13,11 @@ i'm 21 years old, i was studying chemistry major and i dropped out to focus \
 on programing. i also like watching soccer, i'm a fan of bayern munchen, i also \
 like hip hop music, my top five are eminem, jayz, 2pac, biggie, reggie.`;
 
-const experienceHeader = `i have worked on multiple project of different themes and \
-kinds like personal, e-commerce and landing page. \
-i'm also open for working on various kinds of projects like restaurants, hotels. \
-in 2022 i have worked on 6 projects from a to z, you can review some of them below.`;
+const experienceHeader = `I'm expert full stack JavaScript developer with 2 years of \
+experience in building full stack web applications using JavaScript top notch frameworks \
+like React, Next.js, TypeScript, Redux, Tailwind CSS, Node, MongoDB and i have worked with \
+remotely distributed teams from north America and Europe using agile systems for product \
+management.`;
 
 const pricingDetails =
   "charging money as a freelancer varies, some clients prefer to \
