@@ -13,7 +13,7 @@ i'm 22 years old, i was studying chemistry major and i dropped out to focus \
 on programing. i also like watching soccer, i'm a fan of bayern munchen, i also \
 like hip hop music, my top five are eminem, jayz, 2pac, biggie, reggie.`;
 
-const experienceHeader = `I'm expert full stack JavaScript developer with 2 years of \
+const experienceHeader = `I'm expert full stack JavaScript developer with 3 years of \
 experience in building full stack web applications using JavaScript top notch frameworks \
 like React, Next.js, TypeScript, Redux, Tailwind CSS, Node, MongoDB and i have worked with \
 remotely distributed teams from north America and Europe using agile systems for product \
