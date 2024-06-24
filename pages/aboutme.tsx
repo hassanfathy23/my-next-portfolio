@@ -9,7 +9,7 @@ import Paragraph from "../components/Paragraph";
 import WorkList from "../components/WorksList";
 
 const personalInfo = `my name is hassan fathy, i'm a junior full stack from egypt, \
-i'm 21 years old, i was studying chemistry major and i dropped out to focus \
+i'm 22 years old, i was studying chemistry major and i dropped out to focus \
 on programing. i also like watching soccer, i'm a fan of bayern munchen, i also \
 like hip hop music, my top five are eminem, jayz, 2pac, biggie, reggie.`;
 
