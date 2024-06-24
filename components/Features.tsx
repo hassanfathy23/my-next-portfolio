@@ -34,7 +34,7 @@ export default function Example() {
             A better way to invest your money
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 lg:mx-auto">
-             what can you get for 10$? you can get a starbucks, high quality latte, any foot long sub from subway and also you can get a website with all the following advantages
+             You can get a website with all the following advantages
           </p>
         </div>
 
