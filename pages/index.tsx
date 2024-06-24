@@ -29,7 +29,7 @@ export default function Home() {
           content="web developer for hire, hire someone to 
           build your website who is expert in developing font 
           end, back end, full stack web applications with 
-          experience of 1 year in software and software 
+          experience of 3 years in software and software 
           archticture, i will develop your website using 
           html, css, javascript, react, next, redux, tailwind, 
           mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
@@ -41,7 +41,7 @@ export default function Home() {
         <meta property="og:description" content="web developer for hire, hire someone to 
           build your website who is expert in developing font 
           end, back end, full stack web applications with 
-          experience of 1 year in software and software 
+          experience of 3 year in software and software 
           archticture, i will develop your website using 
           html, css, javascript, react, next, redux, tailwind, 
           mongodb, mongoose, mongodb atlas, node, restapi, graphql, 
